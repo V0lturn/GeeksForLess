@@ -1,0 +1,28 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<WebApplication1.Models.Catalog>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <h1>@ViewBag.ErrorMessage</h1>
+}
+else
+{
+    <div>
+        <h1>@ViewBag.Title</h1>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li><a asp-controller="MainPage" asp-action="GetFolderStructureFromFile" asp-route-catalogId="@item.CatalogId">@item.Name</a></li>
+            }
+        </ul>
+    </div>
+}
+<div>
+    <form method="post" enctype="multipart/form-data" asp-controller="MainPage" asp-action="GetFolderFromPC">
+        <input type="file" name="folderPath" />
+        <input type="submit" value="Загрузить"/>
+    </form>
+</div>
+<div>
+    <a asp-controller="MainPage" asp-action="ExportToTxt">Експортувати з БД</a>
+</div>

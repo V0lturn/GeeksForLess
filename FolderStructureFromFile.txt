@@ -1,0 +1,8 @@
+Root directory: aaa
+Subdirectories of "aaa": bbb, ccc, ddd
+Subdirectories of "ddd": dd1, dd2, dd3
+Subdirectories of "dd1": dd1_1, dd1_2
+Subdirectories of "bbb": bb1, bb2
+Root directory: eee
+Subdirectories of "eee": fff, ggg
+Subdirectories of "ggg": gg1, gg2
